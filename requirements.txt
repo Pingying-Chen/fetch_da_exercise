@@ -2,7 +2,8 @@ pandas
 numpy
 matplotlib
 seaborn
-ydata_profiling
 notebook
 pyspark
 findspark
+ipython-sql==0.4.1
+sqlalchemy==1.4.4
