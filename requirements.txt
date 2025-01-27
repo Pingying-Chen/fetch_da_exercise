@@ -2,6 +2,7 @@ pandas
 numpy
 matplotlib
 seaborn
+ydata_profiling
 notebook
 pyspark
 findspark
