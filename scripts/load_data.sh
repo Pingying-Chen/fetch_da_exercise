@@ -1,9 +1,18 @@
--- Set mode to CSV for imports
-.mode csv
+#!/bin/bash
+
+# Define the database name
+DB_NAME="./data/fetch_data.db"
+
+# Ensure the directory for the database exists
+mkdir -p ./data
+
+# Create the database and tables
+sqlite3 "$DB_NAME" <<EOF
+-- Enable foreign key support
+PRAGMA foreign_keys = ON;
 
 -- Drop and recreate the Users table
 DROP TABLE IF EXISTS Users;
-
 CREATE TABLE Users (
     id TEXT,
     created_date DATETIME,
@@ -12,12 +21,9 @@ CREATE TABLE Users (
     language VARCHAR,
     gender VARCHAR
 );
--- Import data into the Users table
-.import data/processed/users_cleaned.csv Users
 
 -- Drop and recreate the Products table
 DROP TABLE IF EXISTS Products;
-
 CREATE TABLE Products (
     category_1 VARCHAR,
     category_2 VARCHAR,
@@ -27,12 +33,9 @@ CREATE TABLE Products (
     brand VARCHAR,
     barcode TEXT
 );
--- Import data into the Products table
-.import data/processed/products_cleaned.csv Products
 
 -- Drop and recreate the Transactions table
 DROP TABLE IF EXISTS Transactions;
-
 CREATE TABLE Transactions (
     receipt_id TEXT,
     purchase_date DATETIME,
@@ -45,6 +48,15 @@ CREATE TABLE Transactions (
     FOREIGN KEY (user_id) REFERENCES Users (id),
     FOREIGN KEY (barcode) REFERENCES Products (barcode)
 );
+EOF
 
--- Import data into the Transactions table
+# Import CSV data into the tables
+sqlite3 "$DB_NAME" <<EOF
+.mode csv
+.import data/processed/users_cleaned.csv Users
+.import data/processed/products_cleaned.csv Products
 .import data/processed/transactions_cleaned.csv Transactions
+EOF
+
+# Confirmation message
+echo "Database '$DB_NAME' created successfully with 'Users', 'Products', and 'Transactions' tables."
