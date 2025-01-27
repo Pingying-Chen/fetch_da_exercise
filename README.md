@@ -39,3 +39,6 @@ Construct an email or slack message that is understandable to a product or busin
 
 ## Entity Relationship Model
 ![er.png](assets/er.png)
+
+## Requirements
+Download and install SQLite3
