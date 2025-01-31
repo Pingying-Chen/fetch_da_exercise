@@ -19,20 +19,26 @@ Missing values, incomplete records, and gaps in data:
 
 ### 2. Consistency Issues
 Duplicate entries, inconsistent formatting, and naming variations:
+1. 
 
 
 ### 3. Accuracy Issues
 Incorrect, outdated, or erroneous data:
-
+1. birth_date
 
 ### 4. Structural Issues
 Incorrect data types, unstructured data, and format mismatches:
+1. 
 
 
 ### 5. Compliance & Privacy Issues
 Sensitive data exposure, regulatory non-compliance, and security risks.
+1. User information
 
 ## V. Questions About Data
+1. Why are some of the users who scanned receipts in the Transactions dataset not in the Users dataset as well?
+2. Why are some of the barcodes mentioned in the Transactions dataset not listed in the Products dataset as well?
+3. Current data in Transactions are all scanned in 2024. Can you provide more data in the previous years?
 
 ## VI. Interesting Trend in The Data
 
