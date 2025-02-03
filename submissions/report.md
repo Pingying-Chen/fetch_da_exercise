@@ -15,7 +15,7 @@ After exploring the data, some quality issues were found.
 
 ### 1. Completeness Issues
 Missing values, incomplete records, and gaps in data:
-1. 
+1. Missing values were found 
 
 ### 2. Consistency Issues
 Duplicate entries, inconsistent formatting, and naming variations:
