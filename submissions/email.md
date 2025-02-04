@@ -41,9 +41,9 @@ To assist in resolving these issues, I have included a detailed data quality sum
 To conduct a more precise analysis, we need:
 
 **1. Additional Data:**
-- Cohort Analysis – Understanding engagement trends for different user groups.
-- Market & Competitive Insights – Identifying external factors affecting growth.
-- Recent Marketing & Acquisition Data – Evaluating ad spend efficiency and referral trends.
+- **Cohort Analysis** – Understanding engagement trends for different user groups.
+- **Market & Competitive Insights** – Identifying external factors affecting growth.
+- **Recent Marketing & Acquisition Data** – Evaluating ad spend efficiency and referral trends.
 
 **2. Data Quality Fixes:**
 - Validate and clean historical data to remove inconsistencies.
