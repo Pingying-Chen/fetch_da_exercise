@@ -5,3 +5,4 @@ seaborn
 notebook
 ipython-sql==0.4.1
 sqlalchemy==1.4.4
+sqlite3==3.45
