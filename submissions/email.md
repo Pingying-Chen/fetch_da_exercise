@@ -1,10 +1,10 @@
-Subject: User Growth Trend & Data Quality Issues – Request Action for Further Analysis
+**Subject:** User Growth Trend & Data Quality Issues – Request Action for Further Analysis
 
-To: abcdefg@fetch.com
+**To:** abcdefg@fetch.com
 
-FROM: hijklm@fetch.com
+**FROM:** hijklm@fetch.com
 
-Attachment: [Data Quality Report](attachment.md)
+**Attachment:** [Data Quality Report](attachment.md)
 
 ---
 
