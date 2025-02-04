@@ -1,0 +1,18 @@
+# Key Data Quality Issues
+Data Issues:
+- **Users:** Missing demographic information (`BIRTH_DATE`, `STATE`, etc.), unusual date ranges for `BIRTH_DATE`, potential sensitive data exposure.
+- **Products:** Missing or inconsistent product categories and `BRAND` details; duplicate `BARCODE`.
+- **Transactions:** Incomplete dataset timeframe, mismatched `USER_ID`, and unusual data in `FINAL_QUANTITY` and `FINAL_SALE`.
+
+| **Category**    | **Completeness Issues**                                                      | **Consistency Issues**                                                                      | **Accuracy Issues**                                                                                  | **Structural Issues**                                                    | **Compliance & Privacy Issues**                                                       |
+|-----------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **Users**       | - Missing values in `BIRTH_DATE`, `STATE`, `LANGUAGE`, `GENDER`<br>- Incomplete records | - Duplicate entries<br>- Inconsistent formatting & naming variations                        | - Unusual `BIRTH_DATE` ranges (1900-01-01 to 2022-04-03)<br>- Potentially outdated or erroneous data    | - Null values stored as “nan” or “NaN” or ""<br>- Inaccurate data types for `BIRTH_DATE`, `CREATED_DATE` | - `BIRTH_DATE`, `STATE`, `LANGUAGE`, `GENDER` fields risk sensitive data exposure & possible discrimination  |
+| **Products**    | - Missing values in `CATEGORY_1`, `CATEGORY_2`, `CATEGORY_3`, `CATEGORY_4`, etc.<br>- Missing/partial BARCODE and MANUFACTURER info | - Duplicate rows in dataset<br>- Duplicated `BARCODE` (primary key) with conflicting data in `CATEGORY_1`, `CATEGORY_2`, `CATEGORY_3`, `CATEGORY_4`, or `BRAND` | - Inaccurate or outdated product details                                                                | - Null values stored as “nan” or “NaN” or ""<br>- Inaccurate data types for `BARCODE` | - Potential brand misrepresentation, regulatory compliance concerns                     |
+| **Transactions**| - Dataset only covers June–Sept 2024<br>- Not all users (100K total) appear in transaction logs (only 17K) | - Some rows are split with `FINAL_QUANTITY` or `FINAL_SALE` being null| - Unusual `FINAL_QUANTITY` values (e.g. 276 for a single transaction with only 5.89 for `FINAL_SALE` | - Null values as “nan” or “NaN” or ""<br>- Data type mismatches for `PURCHASE_DATE`, `SCAN_DATE`, `BARCODE`, `FINAL_QUANTITY`, `FINAL_SALE`          | - Risk of exposing personal purchase patterns          |
+
+Note:
+1. **Completeness Issues:** Missing values, incomplete records, and gaps in data.
+2. **Consistency Issues:** Duplicate entries, inconsistent formatting, and naming variations.
+3. **Accuracy Issues:** Incorrect, outdated, or erroneous data.
+4. **Structural Issues:** Incorrect data types, unstructured data, and format mismatches.
+5. **Compliance & Privacy Issues:** Sensitive data exposure, regulatory non-compliance, and security risks.
